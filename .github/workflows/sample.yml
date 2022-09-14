@@ -9,8 +9,9 @@ jobs:
         with:
           python-version: 3.8.5
       - name: Install dependencies
-        run: python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple pylint
+        run: |
+          python -m pip install pylint pytest
       - name: Lint
         run: pylint add.py
       - name: Test
-        run: pytest test.py
+        run: python -m pytest test.py
